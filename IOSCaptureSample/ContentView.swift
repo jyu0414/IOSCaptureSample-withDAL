@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var devices: [AVCaptureDevice] = []
     @State var device: AVCaptureDevice?
     @State var aspectRatio: CGFloat = 1.5
+    var window: NSWindow
     
     func update() {
         AVCaptureDeviceConfigurator.shared.update()
@@ -44,11 +45,6 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name.AVCaptureDeviceWasDisconnected)) { _ in
             update()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        .frame(width: window.frame.size.height * aspectRatio)
     }
 }
