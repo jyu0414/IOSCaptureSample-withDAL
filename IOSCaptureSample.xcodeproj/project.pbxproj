@@ -12,6 +12,8 @@
 		BA3A810C2649BF6000B19222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3A810B2649BF6000B19222 /* Assets.xcassets */; };
 		BA3A810F2649BF6000B19222 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3A810E2649BF6000B19222 /* Preview Assets.xcassets */; };
 		BA3A81182649BF8C00B19222 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A81172649BF8C00B19222 /* Screen.swift */; };
+		BAB3C110264A6C46007F7AC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB3C10F264A6C46007F7AC6 /* AppDelegate.swift */; };
+		BAB3C112264A75A7007F7AC6 /* AVCaptureDeviceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB3C111264A75A7007F7AC6 /* AVCaptureDeviceConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		BA3A81102649BF6000B19222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3A81112649BF6000B19222 /* IOSCaptureSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IOSCaptureSample.entitlements; sourceTree = "<group>"; };
 		BA3A81172649BF8C00B19222 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		BAB3C10F264A6C46007F7AC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BAB3C111264A75A7007F7AC6 /* AVCaptureDeviceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				BA3A81112649BF6000B19222 /* IOSCaptureSample.entitlements */,
 				BA3A810D2649BF6000B19222 /* Preview Content */,
 				BA3A81172649BF8C00B19222 /* Screen.swift */,
+				BAB3C10F264A6C46007F7AC6 /* AppDelegate.swift */,
+				BAB3C111264A75A7007F7AC6 /* AVCaptureDeviceConfigurator.swift */,
 			);
 			path = IOSCaptureSample;
 			sourceTree = "<group>";
@@ -143,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB3C110264A6C46007F7AC6 /* AppDelegate.swift in Sources */,
 				BA3A810A2649BF5F00B19222 /* ContentView.swift in Sources */,
 				BA3A81082649BF5F00B19222 /* IOSCaptureSampleApp.swift in Sources */,
 				BA3A81182649BF8C00B19222 /* Screen.swift in Sources */,
+				BAB3C112264A75A7007F7AC6 /* AVCaptureDeviceConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

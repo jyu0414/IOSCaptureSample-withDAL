@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct IOSCaptureSampleApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State var aspectRatio: CGFloat = 1.5
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(aspectRatio: $aspectRatio)
+                .aspectRatio(aspectRatio, contentMode: .fit)
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
+        .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
+        
+        
     }
 }
