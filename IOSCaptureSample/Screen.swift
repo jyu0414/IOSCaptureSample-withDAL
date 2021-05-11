@@ -11,57 +11,80 @@ import SwiftUI
 import CoreMediaIO
 import AVFoundation
 
-struct Screen: NSViewRepresentable {
+struct Screen: NSViewRepresentable, ScreenDelegate {
     
     @Binding var device: AVCaptureDevice?
     @Binding var aspectRatio: CGFloat
-    var currentInput: AVCaptureDeviceInput?
+    private var captureHandler = CaptureHandler()
     
     init(device: Binding<AVCaptureDevice?>, aspectRatio: Binding<CGFloat>) {
         self._device = device
         self._aspectRatio = aspectRatio
+        captureHandler.delegate = self
     }
     
     func updateNSView(_ nsView: NSViewType, context: Context) {
-        nsView.layer = setInput()
+        guard let device = device else { return }
+        nsView.layer = captureHandler.getInput(for: device)
     }
     
-    func setInput() -> CALayer? {
-        print("start setinput")
-        guard let device = device  else {
-            return nil
-        }
-        
-        var newInput: AVCaptureDeviceInput?
-        let session = AVCaptureSession()
-        
-        do {
-            newInput = try AVCaptureDeviceInput(device: device)
-        } catch let error as NSError {
-            print("error make capture device input")
-            print(error.localizedDescription)
-            return nil
-        }
-        
-        print("newinput")
-        session.addInput(newInput!)
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        
-        previewLayer.connection?.videoOrientation = .portrait
-        
-        print("before start")
-        session.startRunning()
-        print("started")
-        
-        return previewLayer
+    func update(aspectRatio: CGFloat) {
+        self.aspectRatio = aspectRatio
     }
     
     func makeNSView(context: Context) -> some NSView {
         let view = NSView()
         view.wantsLayer = true
-        view.layer = setInput()
+        if let device = device {
+            view.layer = captureHandler.getInput(for: device)
+        }
         return view
     }
     
+}
+
+class CaptureHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    var delegate: ScreenDelegate?
+    
+    func getInput(for device: AVCaptureDevice) -> CALayer? {
+        let session = AVCaptureSession()
+        
+        //output
+        let output = AVCaptureVideoDataOutput()
+        output.setSampleBufferDelegate(self, queue: .main)
+        session.addOutput(output)
+        
+        //input
+        var input: AVCaptureDeviceInput?
+        do {
+            input = try AVCaptureDeviceInput(device: device)
+        } catch let error as NSError {
+            print("error make capture device input")
+            print(error.localizedDescription)
+            return nil
+        }
+        session.addInput(input!)
+        
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        
+        previewLayer.connection?.videoOrientation = .portrait
+        
+        session.startRunning()
+        
+        return previewLayer
+    }
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        connection.videoOrientation = .portrait
+        let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+        let w = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
+        let h = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+        delegate?.update(aspectRatio: w / h)
+    }
+}
+
+protocol ScreenDelegate {
+    func update(aspectRatio: CGFloat)
 }

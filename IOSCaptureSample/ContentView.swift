@@ -11,7 +11,7 @@ import AVFoundation
 struct ContentView: View {
     @State var devices: [AVCaptureDevice] = []
     @State var device: AVCaptureDevice?
-    @Binding var aspectRatio: CGFloat
+    @State var aspectRatio: CGFloat = 1.5
     
     func update() {
         AVCaptureDeviceConfigurator.shared.update()
@@ -32,8 +32,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                }
-                
+                }.frame(maxWidth: .infinity)
             }
         })
         .onAppear {
@@ -50,6 +49,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(aspectRatio: .constant(1.5))
+        ContentView()
     }
 }
