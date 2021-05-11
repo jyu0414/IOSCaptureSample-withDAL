@@ -34,6 +34,8 @@ class AVCaptureDeviceConfigurator {
             UInt32(MemoryLayout.size(ofValue: allow)),
             &allow)
         
+        sleep(1)
+        
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera], mediaType: .none, position: .unspecified)
         self.devices = discoverySession.devices
         

@@ -39,7 +39,7 @@ struct ContentView: View {
         .onAppear {
             update()
         }
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name.AVCaptureDeviceWasDisconnected)) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name.AVCaptureDeviceWasConnected)) { _ in
             update()
         }
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name.AVCaptureDeviceWasDisconnected)) { _ in
