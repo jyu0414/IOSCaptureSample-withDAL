@@ -9,5 +9,5 @@
 import Foundation
 
 func log(_ message: Any = "", function: String = #function) {
-    NSLog("SimpleDALPlugin: \(function): \(message)")
+    NSLog("iOSMirror: \(function): \(message)")
 }

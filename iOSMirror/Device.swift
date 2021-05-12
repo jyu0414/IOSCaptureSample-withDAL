@@ -12,10 +12,10 @@ import IOKit
 class Device: Object {
     var objectID: CMIOObjectID = 0
     var streamID: CMIOStreamID = 0
-    let name = "SimpleDALPlugin"
-    let manufacturer = "seanchas116"
-    let deviceUID = "SimpleDALPlugin Device"
-    let modelUID = "SimpleDALPlugin Model"
+    let name = "iOSMirror"
+    let manufacturer = "Bridge UI, Inc."
+    let deviceUID = "iOSMirror"
+    let modelUID = "iOSMirror"
     var excludeNonDALAccess: Bool = false
     var deviceMaster: Int32 = -1
 

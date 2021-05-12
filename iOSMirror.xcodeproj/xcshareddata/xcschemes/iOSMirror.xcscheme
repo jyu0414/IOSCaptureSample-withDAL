@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BEF5B52E2453D9B300E7FC18"
-               BuildableName = "SimpleDALPlugin.plugin"
-               BlueprintName = "SimpleDALPlugin"
-               ReferencedContainer = "container:SimpleDALPlugin.xcodeproj">
+               BuildableName = "iOSMirror.plugin"
+               BlueprintName = "iOSMirror"
+               ReferencedContainer = "container:iOSMirror.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BEF5B52E2453D9B300E7FC18"
-            BuildableName = "SimpleDALPlugin.plugin"
-            BlueprintName = "SimpleDALPlugin"
-            ReferencedContainer = "container:SimpleDALPlugin.xcodeproj">
+            BuildableName = "iOSMirror.plugin"
+            BlueprintName = "iOSMirror"
+            ReferencedContainer = "container:iOSMirror.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

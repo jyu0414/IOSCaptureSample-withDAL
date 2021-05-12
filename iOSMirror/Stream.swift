@@ -32,7 +32,6 @@ class Stream: Object, IOSScreenCaptureDelegate {
             extensions: nil,
             formatDescriptionOut: &formatDescription)
         guard error == noErr else {
-            log("CMVideoFormatDescriptionCreate Error: \(error)")
             return nil
         }
         return formatDescription
@@ -43,7 +42,7 @@ class Stream: Object, IOSScreenCaptureDelegate {
 
         let error = CMIOStreamClockCreate(
             kCFAllocatorDefault,
-            "SimpleDALPlugin clock" as CFString,
+            "iOSMirror clock" as CFString,
             Unmanaged.passUnretained(self).toOpaque(),
             CMTimeMake(value: 1, timescale: 10),
             100, 10,
@@ -91,7 +90,6 @@ class Stream: Object, IOSScreenCaptureDelegate {
     ]
 
     func start() {
-        log("Start!")
         iOSScreenCapture = IOSScreenCapture()
         iOSScreenCapture!.delegate = self
         iOSScreenCapture!.start()
@@ -100,7 +98,6 @@ class Stream: Object, IOSScreenCaptureDelegate {
     }
 
     func stop() {
-        log("Stop!")
         iOSScreenCapture?.stop()
         timer.suspend()
     }

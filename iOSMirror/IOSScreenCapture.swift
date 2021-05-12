@@ -17,7 +17,6 @@ class IOSScreenCapture: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override init() {
         super.init()
-        log("IOSScreenCapture Init")
         func updateDeviceList(notification: Notification) {
             self.discoverDevices()
             self.setCaptureSession()
@@ -29,7 +28,6 @@ class IOSScreenCapture: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     private func discoverDevices() {
-        log("IOSScreenCapture DiscoverDevices")
         var prop = CMIOObjectPropertyAddress(
             mSelector: CMIOObjectPropertySelector(kCMIOHardwarePropertyAllowScreenCaptureDevices),
             mScope: CMIOObjectPropertyScope(kCMIOObjectPropertyScopeGlobal),
@@ -48,19 +46,16 @@ class IOSScreenCapture: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         sleep(1)
         
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera], mediaType: .none, position: .unspecified)
-        log("IOSScreenCapture \(discoverySession.devices)")
         
         if let device = discoverySession.devices.filter({ $0.modelID == "iOS Device" && $0.manufacturer == "Apple Inc." }).first {
             self.device = device
         }
-        //device = discoverySession.devices.first
         
     }
     
     private func setCaptureSession() {
         
         guard let device = device else { return }
-        log(device)
         captureSession?.stopRunning()
         
         let session = AVCaptureSession()

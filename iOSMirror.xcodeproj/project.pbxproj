@@ -29,9 +29,9 @@
 		BAA61524264C4059003E2EB9 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		BAA61526264C405F003E2EB9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BE8832AB2454424600326232 /* CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBuffer.swift; sourceTree = "<group>"; };
-		BEF5B52F2453D9B300E7FC18 /* SimpleDALPlugin.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleDALPlugin.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF5B52F2453D9B300E7FC18 /* iOSMirror.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMirror.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEF5B5322453D9B300E7FC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEF5B5382453D9CA00E7FC18 /* SimpleDALPlugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleDALPlugin-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEF5B5382453D9CA00E7FC18 /* iOSMirror-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSMirror-Bridging-Header.h"; sourceTree = "<group>"; };
 		BEF5B5392453D9CA00E7FC18 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		BEF5B53C2453DFA200E7FC18 /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
 		BEF5B53E2453E8F500E7FC18 /* PluginInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginInterface.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		BEF5B5262453D9B300E7FC18 = {
 			isa = PBXGroup;
 			children = (
-				BEF5B5312453D9B300E7FC18 /* SimpleDALPlugin */,
+				BEF5B5312453D9B300E7FC18 /* iOSMirror */,
 				BEF5B5302453D9B300E7FC18 /* Products */,
 				BEF5B53B2453DFA200E7FC18 /* Frameworks */,
 			);
@@ -69,18 +69,18 @@
 		BEF5B5302453D9B300E7FC18 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEF5B52F2453D9B300E7FC18 /* SimpleDALPlugin.plugin */,
+				BEF5B52F2453D9B300E7FC18 /* iOSMirror.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEF5B5312453D9B300E7FC18 /* SimpleDALPlugin */ = {
+		BEF5B5312453D9B300E7FC18 /* iOSMirror */ = {
 			isa = PBXGroup;
 			children = (
 				BEF5B5322453D9B300E7FC18 /* Info.plist */,
 				BEF5B5392453D9CA00E7FC18 /* Main.swift */,
 				BEF5B53E2453E8F500E7FC18 /* PluginInterface.swift */,
-				BEF5B5382453D9CA00E7FC18 /* SimpleDALPlugin-Bridging-Header.h */,
+				BEF5B5382453D9CA00E7FC18 /* iOSMirror-Bridging-Header.h */,
 				BEF5B5402453F50000E7FC18 /* Object.swift */,
 				BEF5B5422453FE5D00E7FC18 /* Plugin.swift */,
 				BEF5B5442454003B00E7FC18 /* Log.swift */,
@@ -91,7 +91,7 @@
 				BAA61520264C1643003E2EB9 /* IOSScreenCapture.swift */,
 				BAA61522264C353C003E2EB9 /* CMSampleBuffer.swift */,
 			);
-			path = SimpleDALPlugin;
+			path = iOSMirror;
 			sourceTree = "<group>";
 		};
 		BEF5B53B2453DFA200E7FC18 /* Frameworks */ = {
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEF5B52E2453D9B300E7FC18 /* SimpleDALPlugin */ = {
+		BEF5B52E2453D9B300E7FC18 /* iOSMirror */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEF5B5352453D9B300E7FC18 /* Build configuration list for PBXNativeTarget "SimpleDALPlugin" */;
+			buildConfigurationList = BEF5B5352453D9B300E7FC18 /* Build configuration list for PBXNativeTarget "iOSMirror" */;
 			buildPhases = (
 				BEF5B52B2453D9B300E7FC18 /* Sources */,
 				BEF5B52C2453D9B300E7FC18 /* Frameworks */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleDALPlugin;
+			name = iOSMirror;
 			productName = SimpleDALPlugin;
-			productReference = BEF5B52F2453D9B300E7FC18 /* SimpleDALPlugin.plugin */;
+			productReference = BEF5B52F2453D9B300E7FC18 /* iOSMirror.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -139,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEF5B52A2453D9B300E7FC18 /* Build configuration list for PBXProject "SimpleDALPlugin" */;
+			buildConfigurationList = BEF5B52A2453D9B300E7FC18 /* Build configuration list for PBXProject "iOSMirror" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -152,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEF5B52E2453D9B300E7FC18 /* SimpleDALPlugin */,
+				BEF5B52E2453D9B300E7FC18 /* iOSMirror */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WSAUVM3XKG;
-				INFOPLIST_FILE = SimpleDALPlugin/Info.plist;
+				INFOPLIST_FILE = iOSMirror/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,7 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.bridgeui.mobile-capture-dal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleDALPlugin/SimpleDALPlugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSMirror/iOSMirror-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = plugin;
@@ -334,7 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WSAUVM3XKG;
-				INFOPLIST_FILE = SimpleDALPlugin/Info.plist;
+				INFOPLIST_FILE = iOSMirror/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.bridgeui.mobile-capture-dal";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleDALPlugin/SimpleDALPlugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSMirror/iOSMirror-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = plugin;
 			};
@@ -353,7 +353,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEF5B52A2453D9B300E7FC18 /* Build configuration list for PBXProject "SimpleDALPlugin" */ = {
+		BEF5B52A2453D9B300E7FC18 /* Build configuration list for PBXProject "iOSMirror" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEF5B5332453D9B300E7FC18 /* Debug */,
@@ -362,7 +362,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEF5B5352453D9B300E7FC18 /* Build configuration list for PBXNativeTarget "SimpleDALPlugin" */ = {
+		BEF5B5352453D9B300E7FC18 /* Build configuration list for PBXNativeTarget "iOSMirror" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEF5B5362453D9B300E7FC18 /* Debug */,
