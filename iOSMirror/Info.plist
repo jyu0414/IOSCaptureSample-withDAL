@@ -23,7 +23,7 @@
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>25EBE7ED-3E65-4ACF-8DBD-3ABABBF9C161</key>
-		<string>iOSMirror</string>
+		<string>iOSMirrorMain</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
