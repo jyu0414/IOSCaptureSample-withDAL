@@ -10,7 +10,7 @@ iOSMirror is a DAL plugin (Virtual WebCam) for showing iOS screen on chrome web 
 
 <img src="https://user-images.githubusercontent.com/7841984/118077541-3dc7ec00-b3ef-11eb-919c-ad58e40574d3.gif" width=50% alt="DEMO"/>
 
-### License
+### Acknowledgments
 
 This project is based on the following repositories.
 
@@ -31,3 +31,12 @@ This example shows how access iOS screen as WebCamera device using AVFoundation.
 
 - Build on Xcode and you can use this app. It may not work without code signing.
 - You can choose video sources using Touchpad on your MacBook Pro.
+
+## Contact
+
+- Yuji Sasaki (https://sasaki.dev/)
+
+## License
+
+This project is licensed under the MIT License.
+
