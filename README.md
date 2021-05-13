@@ -8,7 +8,7 @@ This project includes the following systems.
 
 iOSMirror is a DAL plugin (Virtual WebCam) for showing iOS screen on chrome web app or other macOS applications. You may not use some macOS applications, because recently a part of macOS applications, including Zoom, deny third-party virtual webcam plugins.
 
-![Image from Gyazo](https://gyazo.com/b8fcfb99056803ae1f4a561e5d207767)
+![DEMO](https://user-images.githubusercontent.com/7841984/118077541-3dc7ec00-b3ef-11eb-919c-ad58e40574d3.gif)
 
 ### License
 
