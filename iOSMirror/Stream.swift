@@ -10,9 +10,9 @@ import CoreImage
 
 class Stream: Object, IOSScreenCaptureDelegate {
     var objectID: CMIOObjectID = 0
-    let name = "SimpleDALPlugin"
-    let width = 1280
-    let height = 720
+    let name = "iOSMirror"
+    var width = 1280
+    var height = 720
     let frameRate = 30
 
     private var sequenceNumber: UInt64 = 0
@@ -119,6 +119,10 @@ class Stream: Object, IOSScreenCaptureDelegate {
 
     private func createPixelBuffer() -> CVPixelBuffer? {
         
+//        if width != lastPixelBuffer?.width || height != lastPixelBuffer?.height {
+//            lastPixelBuffer = createBackgroundBuffer()
+//        }
+        
         let pixelBuffer = lastPixelBuffer ?? createBackgroundBuffer()
         
         let context = CIContext()
@@ -139,6 +143,8 @@ class Stream: Object, IOSScreenCaptureDelegate {
     
     func enqueueBuffer(sampleBuffer: CMSampleBuffer) {
         currentScreen = sampleBuffer.CIImage()
+//        width = Int(currentScreen?.extent.width ?? 1280)
+//        height = Int(currentScreen?.extent.height ?? 720)
     }
 
     private func enqueueBuffer() {
